@@ -38,29 +38,50 @@ export default class Presentation extends React.Component {
           <CustomHeading size={3} fit caps>Cloud Platform Buffet</CustomHeading>
         </Slide>
 
-        <Slide transition={['fade']}>
-          <Heading size={1} fit caps lineHeight={1}>Typography</Heading>
+        <Slide>
+          <Heading>Agenda</Heading>
+          <List>
+            <ListItem>Cloud = Buffet</ListItem>
+            <ListItem>Services = All You Can Eat Tasty Treats</ListItem>
+          </List>
         </Slide>
 
         <Slide>
-          <List>
-            <Appear>
-              <ListItem>Item 1</ListItem>
-            </Appear>
-            <ListItem>Item 2</ListItem>
-            <ListItem>Item 3</ListItem>
-            <ListItem>Item 4</ListItem>
-          </List>
+          <Heading>The Cloud Provider</Heading>
         </Slide>
+
         <Slide>
-          <BlockQuote>
-            <Quote>Example Quote</Quote>
-            <Cite>Author</Cite>
-          </BlockQuote>
+          <Heading>Compute</Heading>
         </Slide>
+
+        <Slide>
+          <Heading>Object Storage</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>Databases</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>Platforms as a Service</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>Serverless</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>Stream Data Processing</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>AI and ML</Heading>
+        </Slide>
+
         <Slide>
           <Image src={images.goodWork} width={500} />
         </Slide>
+
       </Deck>
     );
   }
