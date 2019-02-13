@@ -19,7 +19,15 @@ const theme = createTheme(
 const images = {
   formidagon: require('../assets/formidable-logo.svg'),
   goodWork: require('../assets/good-work.gif'),
-  buffet: require('../assets/buffet.jpg')
+  buffet: require('../assets/buffet.jpg'),
+  dessert: require('../assets/dessert.jpg'),
+  soup: require('../assets/soup.jpg'),
+  rolls: require('../assets/rolls.jpg'),
+  waiter: require('../assets/waiter.jpg'),
+  plates: require('../assets/plates.jpg'),
+  azure: require('../assets/azure.png'),
+  aws: require('../assets/aws.png'),
+  gcp: require('../assets/gcp.png')
 };
 
 const CustomHeading = styled(Heading) `
@@ -42,7 +50,7 @@ export default class Presentation extends React.Component {
           <Heading>Agenda</Heading>
           <List>
             <ListItem>Cloud = Buffet</ListItem>
-            <ListItem>Services = All You Can Eat Tasty Treats</ListItem>
+            <ListItem>Cloud Services = All You Can Eat Tasty Treats</ListItem>
           </List>
         </Slide>
 
@@ -50,7 +58,7 @@ export default class Presentation extends React.Component {
           <Heading>The Cloud Provider</Heading>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={ images.rolls }>
           <Heading>Compute</Heading>
         </Slide>
 
@@ -62,19 +70,19 @@ export default class Presentation extends React.Component {
           <Heading>Databases</Heading>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={ images.plates }>
           <Heading>Platforms as a Service</Heading>
         </Slide>
 
-        <Slide>
-          <Heading>Serverless</Heading>
+        <Slide bgImage={ images.waiter }>
+          <Heading >Serverless</Heading>
         </Slide>
 
         <Slide>
-          <Heading>Stream Data Processing</Heading>
+          <Heading bgImage={ images.soup }>Stream Data Processing</Heading>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={ images.dessert }>
           <Heading>AI and ML</Heading>
         </Slide>
 
