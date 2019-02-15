@@ -1,7 +1,7 @@
 import React from 'react';
 import { Deck, Slide, Heading, List, ListItem, BlockQuote, Quote, Cite, Image, Appear, Fit, Fill, Layout, S } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
-import styled from 'react-emotion';
+import styled, { injectGlobal } from 'react-emotion';
 
 const theme = createTheme(
   {
@@ -18,24 +18,28 @@ const theme = createTheme(
 
 const images = {
   buffet: require('../assets/buffet.jpg'),
+  booth: require('../assets/booth.jpg'),
+  menu: require('../assets/menu.png'),
+  salad: require('../assets/salad.jpg'),
   dessert: require('../assets/dessert.jpg'),
   soup: require('../assets/soup.jpg'),
   rolls: require('../assets/rolls.jpg'),
+  burrito: require('../assets/burrito.jpg'),
   waiter: require('../assets/server.jpg'),
   plates: require('../assets/plates.jpg'),
   azure: require('../assets/azure.png'),
   aws: require('../assets/aws.png'),
   gcp: require('../assets/gcp.png'),
   spiderman: require('../assets/spiderman.jpg'),
-  takeaway: require('../assets/takeaway.png')
+  takeaway: require('../assets/takeaway.png'),
+  mlaws: require('../assets/ml-aws.png'),
+  mlgcp: require('../assets/mlgcp.png')
 };
 
-const TitleHeading = styled(Heading) `
-  color: white;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  background: rgb(204, 204, 204);
-  background: rgba(204, 204, 204, 0.9);
+const HeadingOutline = styled(Heading) `
+  color: #1F2022;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #CECECE;
 `;
 
 export default class Presentation extends React.Component {
@@ -43,7 +47,7 @@ export default class Presentation extends React.Component {
     return (
       <Deck theme={theme}>
         <Slide bgImage={images.buffet}>
-          <TitleHeading size={3} fit caps>Cloud Platform Buffet</TitleHeading>
+          <HeadingOutline>Cloud Platform Buffet</HeadingOutline>
         </Slide>
 
         <Slide>
@@ -73,42 +77,8 @@ export default class Presentation extends React.Component {
           <Image src={images.spiderman}/>
         </Slide>
 
-        <Slide bgImage={ images.rolls }>
-          <Heading textColor="secondary">Compute</Heading>
-        </Slide>
-
-        <Slide bgImage={ images.rolls } bgDarken={0.5}>
-          <List textColor="primary" bold>
-            <ListItem>Virtual Machines </ListItem>
-            <ListItem>Includes autoscaling CPU and disk </ListItem>
-            <ListItem>Charged by CPU and RAM over time </ListItem>
-            <ListItem>Mention Vulcan and Aurora </ListItem>
-            <ListItem>GCE, EC2, Azure Compute</ListItem>
-          </List>
-        </Slide>
-
         <Slide>
-          <Heading textColor="secondary">Object Storage</Heading>
-          <List>
-            <ListItem>Upload and access files and other binary data </ListItem>
-            <ListItem>Good for asset storage like media </ListItem>
-            <ListItem>Different types: multi-region, zonal, cold </ListItem>
-            <ListItem>Charged based on type, network ingress and egress </ListItem>
-            <ListItem>GCS, S3, Azure Storage</ListItem>
-          </List>
-        </Slide>
-
-        <Slide>
-          <Heading textColor="secondary">Databases</Heading>
-          <List>
-            <ListItem>Managed database instances</ListItem>
-            <ListItem>SQL and noSQL</ListItem>
-            <ListItem>One click provisioning </ListItem>
-            <ListItem>Easy automatic backups and regional replication </ListItem>
-            <ListItem>Charged by type of instance, amount of compute resources </ListItem>
-            <ListItem>Cloud SQL, Amazon RDS, Azure SQL Database </ListItem>
-            <ListItem>Spanner, Dynamo DB, Cosmos DB</ListItem>
-          </List>
+          <Image src={images.menu} height={750}/>
         </Slide>
 
         <Slide bgImage={ images.plates }>
@@ -117,24 +87,54 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={ images.plates } bgDarken={0.5}>
           <List textColor="primary" bold>
-            <ListItem>Deploy apps without worrying about the infrastructure </ListItem>
-            <ListItem>Available monitoring, disaster recovery, regional availability </ListItem>
-            <ListItem>Charged based on compute resources allocated to running apps </ListItem>
-            <ListItem>GAE, Elastic Beanstalk, Azure App Service</ListItem>
+            <ListItem>Application platform in the cloud</ListItem>
+            <ListItem>Monitoring and Disaster Recovery</ListItem>
+            <ListItem>Regional availability</ListItem>
+            <ListItem textColor="tertiary">GAE, Elastic Beanstalk, Azure App Service</ListItem>
           </List>
         </Slide>
 
-        <Slide>
-          <Heading>Serverless</Heading>
-          <Image src={images.waiter}/>
+        <Slide bgImage={images.booth}>
+          <HeadingOutline textColor="secondary" >Databases</HeadingOutline>
         </Slide>
 
         <Slide>
-          <List>
-            <ListItem>Deploy a self-contained function to a platform </ListItem>
-            <ListItem>Don't have to worry about compute resources </ListItem>
-            <ListItem>Charged by number of invocations and running time </ListItem>
-            <ListItem>Cloud Functions, AWS Lambda, Azure Functions </ListItem>
+          <List bold>
+            <ListItem>Managed database instances</ListItem>
+            <ListItem>SQL and noSQL</ListItem>
+            <ListItem>One click provisioning</ListItem>
+            <ListItem>Automatic backups</ListItem>
+            <ListItem>Regional replication </ListItem>
+            <ListItem textColor="tertiary">Cloud SQL, Amazon RDS, Azure SQL</ListItem>
+            <ListItem textColor="tertiary">Spanner, Dynamo DB, Cosmos DB</ListItem>
+          </List>
+        </Slide>
+
+
+        <Slide bgImage={ images.salad }>
+          <Heading bgColor="secondary">Compute</Heading>
+        </Slide>
+
+        <Slide bgImage={ images.salad } bgDarken={0.5}>
+          <List textColor="primary" bold>
+            <ListItem>Virtual Machines</ListItem>
+            <ListItem>Autoscaling CPU and disk</ListItem>
+            <ListItem>Charged by CPU and RAM over time</ListItem>
+            <ListItem textColor="tertiary">GCE, EC2, Azure Compute</ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgImage={images.burrito}>
+          <Heading textColor="secondary" bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)">Object Storage</Heading>
+        </Slide>
+
+        <Slide bgImage={images.burrito} bgDarken={0.5}>
+          <List textColor="tertiary" bold>
+            <ListItem>Store files and other binary data </ListItem>
+            <ListItem>Asset storage like media </ListItem>
+            <ListItem textColor="primary">Types: multi-region, zonal, cold </ListItem>
+            <ListItem>Charged based on type, network ingress and egress </ListItem>
+            <ListItem textColor="primary">GCS, S3, Azure Storage</ListItem>
           </List>
         </Slide>
 
@@ -143,9 +143,9 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide bgImage={ images.soup } bgDarken={0.5}>
-          <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)">
-            <ListItem>Need to process large amounts of data fast </ListItem>
-            <ListItem>Pubsub messaging </ListItem>
+          <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
+            <ListItem>Large Scala Data Processing</ListItem>
+            <ListItem>Pubsub Messaging</ListItem>
             <ListItem>Streaming data pipelines </ListItem>
             <ListItem>More specialized tooling than running apps on a PaaS or Compute VM </ListItem>
             <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
@@ -156,16 +156,48 @@ export default class Presentation extends React.Component {
           <Heading textColor="secondary" bgColor="white" bgGradient="linear-gradient(to bottom right, white, pink)">AI and ML</Heading>
         </Slide>
 
+        <Slide bgImage={ images.dessert } bgDarken={0.5}>
+          <List textColor="tertiary" bold>
+            <ListItem>Pre-trained classifiers and models</ListItem>
+            <ListItem>Large Public Datasets</ListItem>
+            <ListItem>Integration for computer vision and NLP</ListItem>
+          </List>
+        </Slide>
+
         <Slide>
-          <List>
-            <ListItem>Public API's into trained classifiers and models </ListItem>
-            <ListItem>Easy integration for computer vision and NLP</ListItem>
+          <Image src={images.mlgcp}/>
+          <Image src={images.mlaws}/>
+        </Slide>
+
+        <Slide>
+          <Heading>Serverless</Heading>
+          <Image src={images.waiter}/>
+        </Slide>
+
+        <Slide>
+          <List bold>
+            <ListItem>Self-contained function to a platform</ListItem>
+            <ListItem>Don't have to worry about compute resources</ListItem>
+            <ListItem>Charged by number of invocations + running time</ListItem>
+            <ListItem textColor="tertiary">Cloud Functions, AWS Lambda, Azure Functions</ListItem>
           </List>
         </Slide>
 
         <Slide>
           <Heading>Takeaways</Heading>
           <Image src={images.takeaway}/>
+        </Slide>
+
+        <Slide>
+          <List bold>
+            <ListItem>Lots of Tools to Pick From</ListItem>
+            <ListItem>They're not really all you can eat</ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading>Questions</Heading>
+          <Image src="https://media.giphy.com/media/cAEm5rSuuBEGY/giphy.gif"/>
         </Slide>
 
       </Deck>
