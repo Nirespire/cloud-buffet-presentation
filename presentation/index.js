@@ -18,6 +18,7 @@ const theme = createTheme(
 
 const images = {
   buffet: require('../assets/buffet.jpg'),
+  clouds: require('../assets/clouds.jpg'),
   booth: require('../assets/booth.jpg'),
   menu: require('../assets/menu.png'),
   salad: require('../assets/salad.jpg'),
@@ -52,13 +53,15 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <Heading textColor="secondary">Agenda</Heading>
-          <List textColor="tertiary">
+          <List textColor="white">
+            <ListItem><S type="strikethrough">Make you very hungry</S></ListItem>
+            <ListItem>Demystifying the the Cloud</ListItem>
             <ListItem>Cloud = Buffet</ListItem>
-            <ListItem>Cloud Services = All You Can Eat Tasty Treats</ListItem>
+            <ListItem>Cloud Services = <S type="strikethrough">All You Can Eat</S> Tasty Treats</ListItem>
           </List>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={images.clouds}>
           <Heading textColor="secondary">The Cloud Provider</Heading>
           <Layout>
             <Fill>
@@ -73,11 +76,11 @@ export default class Presentation extends React.Component {
           </Layout>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={images.clouds}>
           <Image src={images.spiderman}/>
         </Slide>
 
-        <Slide>
+        <Slide bgImage={images.buffet}>
           <Image src={images.menu} height={750}/>
         </Slide>
 
@@ -98,15 +101,15 @@ export default class Presentation extends React.Component {
           <HeadingOutline textColor="secondary" >Databases</HeadingOutline>
         </Slide>
 
-        <Slide>
-          <List bold>
+        <Slide bgImage={images.booth} bgDarken={0.5}>
+          <List bold textColor="tertiary">
             <ListItem>Managed database instances</ListItem>
             <ListItem>SQL and noSQL</ListItem>
             <ListItem>One click provisioning</ListItem>
             <ListItem>Automatic backups</ListItem>
             <ListItem>Regional replication </ListItem>
-            <ListItem textColor="tertiary">Cloud SQL, Amazon RDS, Azure SQL</ListItem>
-            <ListItem textColor="tertiary">Spanner, Dynamo DB, Cosmos DB</ListItem>
+            <ListItem textColor="primary">Cloud SQL, Amazon RDS, Azure SQL</ListItem>
+            <ListItem textColor="primary">Spanner, Dynamo DB, Cosmos DB</ListItem>
           </List>
         </Slide>
 
