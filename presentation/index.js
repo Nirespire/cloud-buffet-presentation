@@ -34,7 +34,8 @@ const images = {
   spiderman: require('../assets/spiderman.jpg'),
   takeaway: require('../assets/takeaway.png'),
   mlaws: require('../assets/ml-aws.png'),
-  mlgcp: require('../assets/mlgcp.png')
+  mlgcp: require('../assets/mlgcp.png'),
+  cashier: require('../assets/cashier.jpg')
 };
 
 const HeadingOutline = styled(Heading) `
@@ -54,11 +55,16 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading textColor="secondary">Agenda</Heading>
           <List textColor="white">
-            <ListItem><S type="strikethrough">Make you very hungry</S></ListItem>
             <ListItem>Demystifying the the Cloud</ListItem>
             <ListItem>Cloud = Buffet</ListItem>
-            <ListItem>Cloud Services = <S type="strikethrough">All You Can Eat</S> Tasty Treats</ListItem>
+            <ListItem>Cloud Services = Tasty Treats</ListItem>
+            <ListItem><S type="strikethrough">Make you very hungry</S></ListItem>
           </List>
+        </Slide>
+
+        <Slide bgColor="red">
+          <Heading>DISCLAIMER</Heading>
+          Not All You Can Eat
         </Slide>
 
         <Slide bgImage={images.clouds}>
@@ -149,9 +155,10 @@ export default class Presentation extends React.Component {
           <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
             <ListItem>Large Scala Data Processing</ListItem>
             <ListItem>Pubsub Messaging</ListItem>
+            <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
             <ListItem>Streaming data pipelines </ListItem>
             <ListItem>More specialized tooling than running apps on a PaaS or Compute VM </ListItem>
-            <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
+            <ListItem>Dataflow, Kinesis, Azure Stream Analytics</ListItem>
           </List>
         </Slide>
 
@@ -183,6 +190,21 @@ export default class Presentation extends React.Component {
             <ListItem>Don't have to worry about compute resources</ListItem>
             <ListItem>Charged by number of invocations + running time</ListItem>
             <ListItem textColor="tertiary">Cloud Functions, AWS Lambda, Azure Functions</ListItem>
+          </List>
+        </Slide>
+
+        <Slide>
+          <Heading>Administration</Heading>
+          <Image src={images.cashier} width={500}/>
+        </Slide>
+
+        <Slide>
+          <List>
+            <ListItem>Billing</ListItem>
+            <ListItem>Identity Access Management</ListItem>
+            <ListItem>Network Security</ListItem>
+            <ListItem>Logging</ListItem>
+            <ListItem>Metrics</ListItem>
           </List>
         </Slide>
 
