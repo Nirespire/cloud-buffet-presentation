@@ -130,6 +130,8 @@ export default class Presentation extends React.Component {
             <ListItem>Autoscaling CPU and disk</ListItem>
             <ListItem>Charged by CPU and RAM over time</ListItem>
             <ListItem textColor="tertiary">GCE, EC2, Azure Compute</ListItem>
+            <ListItem>Increasing popularity of Kubernetes</ListItem>
+            <ListItem textColor="tertiary">GKE, EKS , Azure Container Service</ListItem>
           </List>
         </Slide>
 
