@@ -188,7 +188,7 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <List bold>
-            <ListItem>Self-contained function to a platform</ListItem>
+            <ListItem>Runtime for self-contained functions</ListItem>
             <ListItem>Don't have to worry about compute resources</ListItem>
             <ListItem>Charged by number of invocations + running time</ListItem>
             <ListItem textColor="tertiary">Cloud Functions, AWS Lambda, Azure Functions</ListItem>
@@ -201,7 +201,7 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          <List>
+          <List bold>
             <ListItem>Billing</ListItem>
             <ListItem>Identity Access Management</ListItem>
             <ListItem>Network Security</ListItem>
