@@ -155,7 +155,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={ images.soup } bgDarken={0.5}>
           <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
-            <ListItem>Large Scala Data Processing</ListItem>
+            <ListItem>Large Scale Data Processing</ListItem>
             <ListItem>Pubsub Messaging</ListItem>
             <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
             <ListItem>Streaming data pipelines </ListItem>
