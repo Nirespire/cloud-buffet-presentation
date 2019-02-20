@@ -218,7 +218,7 @@ export default class Presentation extends React.Component {
             <ListItem>The cloud can be seen as just a set of tools. </ListItem>
             <ListItem>Those tools can help you become more productive. </ListItem>
             <ListItem>Most cloud providers offer mostly the same types of tasty tools.</ListItem>
-            <ListItem>Unlike actuall Buffets, They are not all you can eat</ListItem>
+            <ListItem>Unlike actual Buffets, They are not all you can eat</ListItem>
           </List>
         </Slide>
 
