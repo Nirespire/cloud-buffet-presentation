@@ -147,6 +147,7 @@ export default class Presentation extends React.Component {
             <ListItem>Charged based on type, network ingress and egress </ListItem>
             <ListItem textColor="primary">GCS, S3, Azure Storage</ListItem>
           </List>
+          
         </Slide>
 
         <Slide bgImage={ images.soup }>
