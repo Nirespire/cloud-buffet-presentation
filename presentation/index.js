@@ -55,10 +55,10 @@ export default class Presentation extends React.Component {
         <Slide>
           <Heading textColor="secondary">Agenda</Heading>
           <List textColor="white">
+            <ListItem><S type="strikethrough">Make you very hungry</S></ListItem>
             <ListItem>Demystifying the the Cloud</ListItem>
             <ListItem>Cloud = Buffet</ListItem>
             <ListItem>Cloud Services = Tasty Treats</ListItem>
-            <ListItem><S type="strikethrough">Make you very hungry</S></ListItem>
           </List>
         </Slide>
 
@@ -155,10 +155,15 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={ images.soup } bgDarken={0.5}>
           <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
-            <ListItem>Large Scale Data Processing</ListItem>
+            <ListItem>Streaming Data</ListItem>
             <ListItem>Pubsub Messaging</ListItem>
             <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
-            <ListItem>Streaming data pipelines </ListItem>
+          </List>
+        </Slide>
+
+        <Slide bgImage={ images.soup } bgDarken={0.5}>
+          <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
+            <ListItem>Streaming Data Pipelines </ListItem>
             <ListItem>More specialized tooling than running apps on a PaaS or Compute VM </ListItem>
             <ListItem>Dataflow, Kinesis, Azure Stream Analytics</ListItem>
           </List>
@@ -170,6 +175,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={ images.dessert } bgDarken={0.5}>
           <List textColor="tertiary" bold>
+            <ListItem>Increasing Popularity   of AI and ML applciations</ListItem>
             <ListItem>Pre-trained classifiers and models</ListItem>
             <ListItem>Large Public Datasets</ListItem>
             <ListItem>Integration for computer vision and NLP</ListItem>
