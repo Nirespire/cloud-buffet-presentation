@@ -101,6 +101,7 @@ export default class Presentation extends React.Component {
         <Slide bgImage={ images.plates } bgDarken={0.5}>
           <List textColor="primary" bold>
             <ListItem>Application platform in the cloud</ListItem>
+            <ListItem>No Worry, easy push</ListItem>
             <ListItem>Monitoring and Disaster Recovery</ListItem>
             <ListItem>Regional availability</ListItem>
             <ListItem textColor="tertiary">GAE, Elastic Beanstalk, Azure App Service</ListItem>
@@ -170,6 +171,8 @@ export default class Presentation extends React.Component {
           <List bgGradient="linear-gradient(to bottom right, #fd751c, #f4e242)" bold>
             <ListItem>Streaming Data Pipelines </ListItem>
             <ListItem>More specialized tooling than running apps on a PaaS or Compute VM </ListItem>
+            <ListItem>Usefull in high volume Applications</ListItem>
+            <ListItem>Easily Integrates with other Manged Systems.</ListItem>
             <ListItem>Dataflow, Kinesis, Azure Stream Analytics</ListItem>
           </List>
           <Image src={images.dataflow} width={500}/>
