@@ -35,7 +35,11 @@ const images = {
   takeaway: require('../assets/takeaway.png'),
   mlaws: require('../assets/ml-aws.png'),
   mlgcp: require('../assets/mlgcp.png'),
-  cashier: require('../assets/cashier.jpg')
+  cashier: require('../assets/cashier.jpg'),
+  dataflow: require('../assets/dataflow.png'),
+  pubsub: require('../assets/pubsub.png'),
+  iam: require('../assets/iam.png'),
+  billing: require('../assets/billing.png')
 };
 
 const HeadingOutline = styled(Heading) `
@@ -147,7 +151,6 @@ export default class Presentation extends React.Component {
             <ListItem>Charged based on type, network ingress and egress </ListItem>
             <ListItem textColor="primary">GCS, S3, Azure Storage</ListItem>
           </List>
-          
         </Slide>
 
         <Slide bgImage={ images.soup }>
@@ -160,6 +163,7 @@ export default class Presentation extends React.Component {
             <ListItem>Pubsub Messaging</ListItem>
             <ListItem>Pubsub, SNS, Azure Service Bus</ListItem>
           </List>
+          <Image src={images.pubsub} width={800}/>
         </Slide>
 
         <Slide bgImage={ images.soup } bgDarken={0.5}>
@@ -168,6 +172,7 @@ export default class Presentation extends React.Component {
             <ListItem>More specialized tooling than running apps on a PaaS or Compute VM </ListItem>
             <ListItem>Dataflow, Kinesis, Azure Stream Analytics</ListItem>
           </List>
+          <Image src={images.dataflow} width={500}/>
         </Slide>
 
         <Slide bgImage={ images.dessert }>
@@ -176,7 +181,7 @@ export default class Presentation extends React.Component {
 
         <Slide bgImage={ images.dessert } bgDarken={0.5}>
           <List textColor="tertiary" bold>
-            <ListItem>Increasing Popularity   of AI and ML applciations</ListItem>
+            <ListItem>Increasing Popularity of AI and ML applications</ListItem>
             <ListItem>Pre-trained classifiers and models</ListItem>
             <ListItem>Large Public Datasets</ListItem>
             <ListItem>Integration for computer vision and NLP</ListItem>
@@ -215,6 +220,7 @@ export default class Presentation extends React.Component {
             <ListItem>Logging</ListItem>
             <ListItem>Metrics</ListItem>
           </List>
+          <Image src={images.iam} width={800}/>
         </Slide>
 
         <Slide>
@@ -224,10 +230,10 @@ export default class Presentation extends React.Component {
 
         <Slide>
           <List bold>
-            <ListItem>The cloud can be seen as just a set of tools. </ListItem>
-            <ListItem>Those tools can help you become more productive. </ListItem>
-            <ListItem>Most cloud providers offer mostly the same types of tasty tools.</ListItem>
-            <ListItem>Unlike actual Buffets, They are not all you can eat</ListItem>
+            <ListItem>The cloud can be seen as just a set of tools</ListItem>
+            <ListItem>Those tools can help you become more productive</ListItem>
+            <ListItem>Most cloud providers offer mostly the same types of tools</ListItem>
+            <ListItem>Unlike actual Buffets, they are not all you can eat</ListItem>
           </List>
         </Slide>
 
